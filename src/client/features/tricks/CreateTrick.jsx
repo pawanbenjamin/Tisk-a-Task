@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useCreateTrickMutation } from "./tricksSlice";
 
 export default function CreateTrick() {
   const [title, setTitle] = useState("");
 
+  const [createTrick] = useCreateTrickMutation();
+
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("Title: ", title);
+    createTrick({ title });
   }
   return (
     <div>
