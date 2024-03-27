@@ -1,10 +1,18 @@
 import { useState } from "react";
+import { useCreateTrickMutation } from "./tricksSlice";
 
 export default function CreateTrick() {
   const [title, setTitle] = useState("");
+
+  const [createTrick] = useCreateTrickMutation();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    createTrick({ title });
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           value={title}
           type="text"

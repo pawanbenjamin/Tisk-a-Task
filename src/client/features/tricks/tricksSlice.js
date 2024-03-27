@@ -5,8 +5,16 @@ const tricksApi = api.injectEndpoints({
     getTricks: builder.query({
       query: () => "/tricks",
       providesTags: ["Tricks"]
+    }),
+    createTrick: builder.mutation({
+      query: (trick) => ({
+        url: "/tricks",
+        method: "POST",
+        body: trick
+      }),
+      invalidatesTags: ["Tricks"]
     })
   })
 });
 
-export const { useGetTricksQuery } = tricksApi;
+export const { useGetTricksQuery, useCreateTrickMutation } = tricksApi;
