@@ -2,9 +2,14 @@ import { useState } from "react";
 
 export default function CreateTrick() {
   const [title, setTitle] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Title: ", title);
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           value={title}
           type="text"

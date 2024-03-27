@@ -23,6 +23,11 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+    const { title } = req.body;
+    const createdTrick = await prisma.trick.create({
+      data: { title }
+    });
+    res.json(createdTrick);
   } catch (error) {
     next(error);
   }
