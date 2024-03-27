@@ -8,6 +8,7 @@ import AuthForm from "./features/auth/AuthForm";
 
 import Root from "./layout/Root.jsx";
 import Tricks from "./features/tricks/Tricks.jsx";
+import Puppies from "./features/puppies/Puppies.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       { path: "/login", element: <AuthForm /> },
-      { path: "/tricks", element: <Tricks /> }
+      { path: "/tricks", element: <Tricks /> },
+      { path: "/puppies", element: <Puppies /> }
     ]
   }
 ]);
