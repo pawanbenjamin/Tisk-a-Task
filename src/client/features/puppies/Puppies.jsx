@@ -1,5 +1,15 @@
-import React from "react";
+import { useGetPuppiesQuery } from "./puppiesSlice";
+
+import PuppyCard from "./PuppyCard";
 
 export default function Puppies() {
-  return <div>Puppies</div>;
+  const { data } = useGetPuppiesQuery();
+
+  return (
+    <div>
+      {data.map((puppy) => {
+        return <PuppyCard puppy={puppy} />;
+      })}
+    </div>
+  );
 }
