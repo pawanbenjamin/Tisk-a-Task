@@ -11,7 +11,8 @@ const tricksApi = api.injectEndpoints({
         url: "/tricks",
         method: "POST",
         body: trick
-      })
+      }),
+      invalidatesTags: ["Tricks"]
     })
   })
 });
