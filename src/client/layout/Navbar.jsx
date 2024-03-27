@@ -25,6 +25,7 @@ export default function Navbar() {
       <menu>
         <li>
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/tricks">Tricks</NavLink>
         </li>
         {token ? (
           <li>
