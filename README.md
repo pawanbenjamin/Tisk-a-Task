@@ -1,17 +1,3 @@
-# Full-stack Template
-
-This template provides a fully functional CRUD app. Once a user has successfully registered for an account and logged in, they can see their existing tasks, create new tasks, update existing tasks, and delete tasks.
-
-## Getting Started
-
-1. Click "Use This Template" and "Create a new repository."
-2. Clone down your repo and run `npm install`.
-3. Create a `.env` file according to the provided `example.env`.
-4. Apply the initial Prisma migration and generate the client.\
-   `npx prisma migrate reset`
-5. Start developing!\
-   `npm run dev`
-
 ## Architecture
 
 ### Backend
@@ -32,5 +18,3 @@ Routing is handled with [React Router](https://reactrouter.com/en/main). The rou
 Application state is managed with [Redux Toolkit](https://redux-toolkit.js.org/). The store is defined in `src/client/store/index.js`. Additional slices should be defined separately in `src/client/features`.
 
 [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) is used to handle data fetching. The central API slice is defined in `src/client/store/api.js` and is intended to stay empty. Additional endpoints should be injected separately in `src/client/features`.
-
-[Less](https://lesscss.org/) is used as the CSS preprocessor.
